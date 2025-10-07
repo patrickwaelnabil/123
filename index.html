@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2609071667371255"
+        crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم البرمجة للمبتدئين - Programming for Beginners</title>
+
+    <!-- META: SEO كما طلبت -->
+    <meta name="description" content="تعلم البرمجة من الصفر بالعربي والإنجليزي.">
+    <meta name="keywords" content="تعليم البرمجة من الصفر عربي وإنجليزي">
+    <meta name="author" content="pwael8700@gmail.com">
+    <link rel="canonical" href="https://yourblogname.blogspot.com/">
+
+    <!-- favicon + خط عربي -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/226/226777.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg: white;
+            --header-bg: #007bff;
+            --nav-bg: #333;
+            --section-border: #ddd;
+            --code-bg: #f8f9fa;
+            --code-border: #ddd;
+            --accent: #007bff;
+        }
+        body.dark {
+            --bg-color: #2b2b2b;
+            --text-color: #e9ecef;
+            --container-bg: #3b3b3b;
+            --header-bg: #0056b3;
+            --nav-bg: #222;
+            --section-border: #555;
+            --code-bg: #555;
+            --code-border: #666;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header-controls {
+            margin-top: 10px;
+        }
+        .header-controls button {
+            background: rgba(255,255,255,0.16);
+            color: white;
+            border: 1px solid white;
+            padding: 6px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .header-controls button.active {
+            background: white;
+            color: var(--accent);
+            border-color: white;
+        }
+        nav {
+            background-color: var(--nav-bg);
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--container-bg);
+            box-shadow: 0 0 12px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            display: flex;
+            gap: 24px;
+        }
+        .main-content { flex: 3; }
+        .sidebar { flex: 1; background: var(--container-bg); padding: 18px; border: 1px solid var(--section-border); border-radius: 8px; height: fit-content; }
+        .sidebar h3 { color: var(--accent); margin-bottom: 12px; }
+        .sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .sidebar li { margin-bottom: 10px; }
+        .sidebar a { color: var(--accent); text-decoration: none; }
+        .sidebar a:hover { text-decoration: underline; }
+        .youtube-subscribe { width: 100%; padding: 10px; background: #ff0000; color: white; text-align: center; border: none; border-radius: 6px; cursor: pointer; margin-top: 12px; font-family: 'Cairo', sans-serif; }
+        .language-toggle { text-align: center; margin-bottom: 20px; }
+        .language-toggle button { background: var(--accent); color: white; border: none; padding: 8px 16px; margin: 0 8px; cursor: pointer; border-radius: 6px; }
+        .language-toggle button.active { background: #0056b3; }
+
+        .section { margin-bottom: 36px; padding: 18px; border: 1px solid var(--section-border); border-radius: 8px; background: transparent; }
+        .section h2 { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+
+        .code-container { position: relative; margin: 12px 0; }
+        .code-block { background: var(--code-bg); border: 1px solid var(--code-border); padding: 14px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; white-space: pre; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; background: var(--accent); color: white; border: none; padding: 6px 10px; cursor: pointer; border-radius: 4px; font-size: 13px; z-index: 2; }
+
+        .educational-image { width: 100%; height: auto; max-height: 300px; object-fit: cover; border-radius: 6px; margin: 16px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+        .bilingual { display: flex; gap: 18px; }
+        .bilingual > div { flex: 1; }
+        .arabic { direction: rtl; text-align: right; }
+        .english { direction: ltr; text-align: left; }
+
+        footer { background-color: var(--nav-bg); color: white; text-align: center; padding: 20px; position: relative; width: 100%; margin-top: 24px; border-radius: 0 0 10px 10px; }
+
+        .courses-section { background: #e9ecef; padding: 12px; border-radius: 6px; margin-top: 12px; }
+        .static-page { display: none; }
+        .static-page.active { display: block; }
+        .main-sections { display: block; }
+        .main-sections.hidden { display: none; }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; padding: 12px; }
+            .bilingual { flex-direction: column; }
+            nav a { display: block; margin: 6px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>تعلم البرمجة للمبتدئين - Programming for Beginners</h1>
+    <p>دليل شامل وتدريجي للمبتدئين باللغتين العربية والإنجليزية</p>
+    <div class="header-controls">
+        <button id="darkModeBtn" onclick="toggleDarkMode()">Dark Mode</button>
+        <button id="langArBtn" onclick="toggleLanguage('ar')" class="active">العربية - Arabic</button>
+        <button id="langEnBtn" onclick="toggleLanguage('en')">English</button>
+    </div>
+</header>
+
+<nav>
+    <a href="#intro" onclick="showMainContent(event)">المقدمة - Introduction</a>
+    <a href="#basics" onclick="showMainContent(event)">الأساسيات - Basics</a>
+    <a href="#python" onclick="showMainContent(event)">بايثون - Python</a>
+    <a href="#exercises" onclick="showMainContent(event)">تمارين - Exercises</a>
+    <a href="#resources" onclick="showMainContent(event)">موارد إضافية - Resources</a>
+    <a href="#courses" onclick="showMainContent(event)">كورسات - Courses</a>
+    <a href="#about" onclick="showStaticPage('about')">من أنا - About</a>
+    <a href="#contact" onclick="showStaticPage('contact')">تواصل - Contact</a>
+    <a href="#privacy" onclick="showStaticPage('privacy')">سياسة الخصوصية - Privacy Policy</a>
+</nav>
+
+<div class="container">
+    <div class="main-content">
+        <!-- المحتوى الرئيسي -->
+        <div id="main-sections" class="main-sections">
+            <section id="intro" class="section">
+                <h2>المقدمة - Introduction</h2>
+                <div class="bilingual">
+                    <div id="intro-ar" class="arabic">
+                        <p>مرحباً بك في موقع تعلم البرمجة للمبتدئين! هذا الموقع مصمم خصيصاً لك إذا كنت جديداً في عالم البرمجة. سنبدأ من الصفر ونتقدم تدريجياً خطوة بخطوة. البرمجة هي عملية كتابة تعليمات للحاسوب ليفهمها وينفذها، مثل إنشاء تطبيقات أو مواقع ويب.</p>
+                        <p><strong>شرح المصطلحات:</strong> "الكود" (Code) هو الرموز التي نكتبها، مثل <code>print("Hello")</code>. "المتغير" (Variable) هو مكان نحفظ فيه بيانات، مثل <code>x = 5</code>.</p>
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="رسم بياني يظهر كيف يعمل الحاسوب مع الكود" class="educational-image">
+                    </div>
+                    <div id="intro-en" class="english" style="display: none;">
+                        <p>Welcome to the Programming for Beginners website! This site is designed especially for you if you're new to programming. We'll start from zero and progress gradually step by step. Programming is the process of writing instructions for the computer to understand and execute, like creating apps or websites.</p>
+                        <p><strong>Term Explanations:</strong> "Code" is what we write, like <code>print("Hello")</code>. A "variable" is a place to store data, like <code>x = 5</code>.</p>
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Diagram showing how the computer works with code" class="educational-image">
+                    </div>
+                </div>
+            </section>
+
+            <section id="basics" class="section">
+                <h2>الأساسيات - Basics</h2>
+                <div class="bilingual">
+                    <div id="basics-ar" class="arabic">
+                        <p>قبل أن نبدأ في لغة برمجة، دعنا نفهم الأساسيات. البرمجة تعتمد على المنطق والحلول للمشكلات. سنتعلم كيفية التفكير مثل المبرمج.</p>
+                        <h3>ما هي الخوارزمية؟ - What is an Algorithm?</h3>
+                        <p>الخوارزمية هي خطوات منطقية لحل مشكلة، مثل وصفة طبخ. مثال: لصنع شاي، 1. اغلي الماء، 2. أضف الشاي، إلخ.</p>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="تدفقية (Flowchart) لخوارزمية بسيطة" class="educational-image">
+                        <h3>أنواع البيانات - Data Types</h3>
+                        <p>الأرقام (Numbers): <code>5</code> أو <code>3.14</code>. النصوص (Strings): <code>"مرحبا"</code>. المنطقي (Boolean): <code>True</code> أو <code>False</code>.</p>
+                    </div>
+                    <div id="basics-en" class="english" style="display: none;">
+                        <p>Before diving into a programming language, let's understand the basics. Programming relies on logic and problem-solving. We'll learn to think like a programmer.</p>
+                        <h3>What is an Algorithm?</h3>
+                        <p>An algorithm is a set of logical steps to solve a problem, like a cooking recipe. Example: To make tea, 1. Boil water, 2. Add tea, etc.</p>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Simple flowchart for an algorithm" class="educational-image">
+                        <h3>Data Types</h3>
+                        <p>Numbers: <code>5</code> or <code>3.14</code>. Strings: <code>"Hello"</code>. Boolean: <code>True</code> or <code>False</code>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="python" class="section">
+                <h2>تعلم بايثون - Learning Python</h2>
+                <p>بايثون هي لغة برمجة سهلة للمبتدئين. سنبدأ بتثبيتها ثم دروس تدريجية.</p>
+                <div class="bilingual">
+                    <div id="python-ar" class="arabic">
+                        <h3>التثبيت - Installation</h3>
+                        <p>قم بتحميل بايثون من <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a> وثبته. استخدم محرر مثل VS Code.</p>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="خطوات تثبيت بايثون" class="educational-image">
+
+                        <h3>الدرس الأول: طباعة نص - First Lesson: Printing Text</h3>
+                        <p>لطباعة "مرحباً عالم"، اكتب:</p>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">نسخ - Copy</button>
+                            <div class="code-block">print("مرحباً عالم")</div>
+                        </div>
+                        <p>شرح الرموز: <code>print</code> هي أمر للطباعة، والأقواس <code>()</code> تحتوي على النص بين علامات الاقتباس <code>""</code>.</p>
+
+                        <h3>الدرس الثاني: المتغيرات - Variables</h3>
+                        <p><code>name = "أحمد"</code> ثم <code>print(name)</code>. هذا يحفظ الاسم في متغير ويطبعها.</p>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="رسم توضيحي للمتغيرات كصناديق" class="educational-image">
+
+                        <h3>الدرس الثالث: العمليات الحسابية - Arithmetic Operations</h3>
+                        <p><code>a = 10</code> <code>b = 5</code> <code>print(a + b)</code> يطبع 15. الرموز: <code>+</code> جمع، <code>-</code> طرح، <code>*</code> ضرب، <code>/</code> قسمة.</p>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">نسخ - Copy</button>
+                            <div class="code-block">a = 10
+b = 5
+print(a + b)  # 15
+print(a * b)  # 50</div>
+                        </div>
+
+                        <h3>دروس إضافية (توسع تدريجي)</h3>
+                        <ul>
+                            <li>الشروط: if-else (مثال: إذا كان العمر أكبر من 18، اطبع "بالغ")</li>
+                            <li>الحلقات: for و while (للتكرار)</li>
+                            <li>الدوال: def function() (لإعادة استخدام الكود)</li>
+                            <li>قوائم: lists مثل [1، 2، 3]</li>
+                        </ul>
+                        <p>سنضيف المزيد من الدروس هنا تدريجياً، مثل التعامل مع الملفات والرسوم البيانية باستخدام مكتبات مثل Turtle.</p>
+                    </div>
+
+                    <div id="python-en" class="english" style="display: none;">
+                        <h3>Installation</h3>
+                        <p>Download Python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a> and install it. Use an editor like VS Code.</p>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Steps to install Python" class="educational-image">
+
+                        <h3>First Lesson: Printing Text</h3>
+                        <p>To print "Hello World", write:</p>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <div class="code-block">print("Hello World")</div>
+                        </div>
+                        <p>Symbol Explanation: <code>print</code> is the command to print, parentheses <code>()</code> contain the text in quotes <code>""</code>.</p>
+
+                        <h3>Second Lesson: Variables</h3>
+                        <p><code>name = "Ahmed"</code> then <code>print(name)</code>. This stores the name in a variable and prints it.</p>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Diagram of variables as boxes" class="educational-image">
+
+                        <h3>Third Lesson: Arithmetic Operations</h3>
+                        <p><code>a = 10</code> <code>b = 5</code> <code>print(a + b)</code> prints 15. Symbols: <code>+</code> addition, <code>-</code> subtraction, <code>*</code> multiplication, <code>/</code> division.</p>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <div class="code-block">a = 10
+b = 5
+print(a + b)  # 15
+print(a * b)  # 50</div>
+                        </div>
+
+                        <h3>Additional Lessons (Gradual Expansion)</h3>
+                        <ul>
+                            <li>Conditions: if-else (example: If age > 18, print "Adult")</li>
+                            <li>Loops: for and while (for repetition)</li>
+                            <li>Functions: def function() (for code reuse)</li>
+                            <li>Lists: like [1، 2، 3]</li>
+                        </ul>
+                        <p>We'll add more lessons gradually, like file handling and graphics using libraries like Turtle.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="exercises" class="section">
+                <h2>تمارين عملية - Practical Exercises</h2>
+                <div class="bilingual">
+                    <div id="exercises-ar" class="arabic">
+                        <p>جرب هذه التمارين لتعزيز التعلم:</p>
+                        <ol>
+                            <li>اكتب كود يطبع اسمك وعمرك.</li>
+                            <li>احسب مساحة مستطيل: طول * عرض.</li>
+                            <li>استخدم if للتحقق إذا كان رقم زوجياً (استخدم % للباقي).</li>
+                        </ol>
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="شاشة تشغيل كود ناجح" class="educational-image">
+                    </div>
+                    <div id="exercises-en" class="english" style="display: none;">
+                        <p>Try these exercises to reinforce learning:</p>
+                        <ol>
+                            <li>Write code to print your name and age.</li>
+                            <li>Calculate rectangle area: length * width.</li>
+                            <li>Use if to check if a number is even (use % for remainder).</li>
+                        </ol>
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Successful code run screenshot" class="educational-image">
+                    </div>
+                </div>
+            </section>
+
+            <section id="resources" class="section">
+                <h2>موارد إضافية - Additional Resources</h2>
+                <div class="bilingual">
+                    <div id="resources-ar" class="arabic">
+                        <ul>
+                            <li>كتب: "Python Crash Course" (ترجمة عربية متوفرة)</li>
+                            <li>مواقع: Codecademy، freeCodeCamp (دروس بالعربية على YouTube)</li>
+                            <li>أدوات: Replit للبرمجة عبر الإنترنت دون تثبيت</li>
+                            <li>فيديوهات: قناة "Elzero Web School" بالعربية</li>
+                        </ul>
+                        <p>هذا الموقع قابل للتوسع؛ أضف صفحات جديدة لدروس متقدمة مثل الويب (HTML/CSS/JS) أو الذكاء الاصطناعي.</p>
+                    </div>
+                    <div id="resources-en" class="english" style="display: none;">
+                        <ul>
+                            <li>Books: "Python Crash Course" (Arabic translations available)</li>
+                            <li>Sites: Codecademy, freeCodeCamp (Arabic lessons on YouTube)</li>
+                            <li>Tools: Replit for online coding without installation</li>
+                            <li>Videos: "Elzero Web School" channel in Arabic</li>
+                        </ul>
+                        <p>This site is expandable; add new pages for advanced lessons like web development (HTML/CSS/JS) or AI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="courses" class="section">
+                <h2>كورسات ودروس قادمة - Courses and Upcoming Lessons</h2>
+                <div class="bilingual">
+                    <div id="courses-ar" class="arabic">
+                        <p>هنا قائمة بالكورسات والدروس القادمة للحفاظ على حماسك:</p>
+                        <div class="courses-section">
+                            <h3>دروس قادمة 🔜</h3>
+                            <ul>
+                                <li>مشروع آلة حاسبة باستخدام HTML وJavaScript</li>
+                                <li>مقدمة في مكتبة Turtle للرسم ببايثون</li>
+                                <li>التعامل مع الملفات في Python</li>
+                                <li>بناء موقع ويب بسيط بـ Flask</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="courses-en" class="english" style="display: none;">
+                        <p>Here's a list of courses and upcoming lessons to keep you motivated:</p>
+                        <div class="courses-section">
+                            <h3>Upcoming Lessons 🔜</h3>
+                            <ul>
+                                <li>Build a Calculator Project using HTML and JavaScript</li>
+                                <li>Introduction to Turtle Library for Drawing in Python</li>
+                                <li>File Handling in Python</li>
+                                <li>Building a Simple Website with Flask</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- الصفحات الثابتة -->
+        <div id="static-pages">
+            <section id="about" class="section static-page">
+                <h2>من أنا - About Me</h2>
+                <div class="bilingual">
+                    <div class="arabic">
+                        <p>أنا مبرمج ومدرس برمجة للمبتدئين. هدفي مساعدتك على تعلم البرمجة بطريقة سهلة وممتعة. لدي خبرة في Python، HTML، وJavaScript.</p>
+                        <p>اتصل بي عبر البريد الإلكتروني: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></p>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="صورة شخصية" class="educational-image">
+                    </div>
+                    <div class="english" style="display: none;">
+                        <p>I am a programmer and programming teacher for beginners. My goal is help you learn programming in an easy and fun way. I have experience in Python, HTML, and JavaScript.</p>
+                        <p>Contact me via email: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></p>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Profile picture" class="educational-image">
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section static-page">
+                <h2>تواصل معي - Contact Me</h2>
+                <div class="bilingual">
+                    <div class="arabic">
+                        <p>إذا كان لديك أسئلة أو اقتراحات، اتصل بي:</p>
+                        <ul>
+                            <li>البريد الإلكتروني: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></li>
+                            <li>تويتر: @patrickwael</li>
+                            <li>يوتيوب: <a href="https://www.youtube.com/channel/UCQOw2ChA3i6Zyg-u-FhIKkQ" target="_blank" rel="noopener">قناتي على يوتيوب</a></li>
+                        </ul>
+                        <form style="max-width: 420px;">
+                            <input type="text" placeholder="اسمك" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd;">
+                            <input type="email" placeholder="بريدك الإلكتروني" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd;">
+                            <textarea placeholder="رسالتك" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd; height: 110px;"></textarea>
+                            <button type="submit" style="background: var(--accent); color: white; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer;">إرسال - Send</button>
+                        </form>
+                    </div>
+                    <div class="english" style="display: none;">
+                        <p>If you have questions or suggestions, contact me:</p>
+                        <ul>
+                            <li>Email: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></li>
+                            <li>Twitter: @patrickwael</li>
+                            <li>YouTube: <a href="https://www.youtube.com/channel/UCQOw2ChA3i6Zyg-u-FhIKkQ" target="_blank" rel="noopener">My channel</a></li>
+                        </ul>
+                        <form style="max-width: 420px;">
+                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd;">
+                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd;">
+                            <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #ddd; height: 110px;"></textarea>
+                            <button type="submit" style="background: var(--accent); color: white; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer;">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="privacy" class="section static-page">
+                <h2>سياسة الخصوصية - Privacy Policy</h2>
+                <div class="bilingual">
+                    <div class="arabic">
+                        <p>نحن نحترم خصوصيتك. هذا الموقع لا يجمع بيانات شخصية إلا من خلال نماذج الاتصال، ولا نشاركها مع أي طرف ثالث. نستخدم ملفات تعريف الارتباط لتحسين التجربة فقط.</p>
+                        <p>آخر تحديث: 2023. لأي استفسار، اتصل بنا عبر البريد: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></p>
+                    </div>
+                    <div class="english" style="display: none;">
+                        <p>We respect your privacy. This site does not collect personal data except through contact forms, and we do not share it with any third party. We use cookies only to improve the user experience.</p>
+                        <p>Last updated: 2023. For inquiries, contact: <a href="mailto:pwael8700@gmail.com">pwael8700@gmail.com</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar">
+        <h3>قائمة الدروس - Lesson List</h3>
+        <ul>
+            <li><a href="#intro" onclick="showMainContent(event)">المقدمة - Introduction</a></li>
+            <li><a href="#basics" onclick="showMainContent(event)">الأساسيات - Basics</a></li>
+            <li><a href="#python" onclick="showMainContent(event)">تعلم بايثون - Learn Python</a></li>
+            <li><a href="#exercises" onclick="showMainContent(event)">تمارين - Exercises</a></li>
+            <li><a href="#resources" onclick="showMainContent(event)">موارد - Resources</a></li>
+            <li><a href="#courses" onclick="showMainContent(event)">كورسات قادمة - Upcoming Courses</a></li>
+        </ul>
+
+        <h3>روابط تحميل - Download Links</h3>
+        <ul>
+            <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">تحميل Python - Download Python</a></li>
+            <li><a href="#" download>كود الدروس - Lesson Codes (ZIP)</a></li>
+        </ul>
+
+        <button class="youtube-subscribe" onclick="window.open('https://www.youtube.com/channel/UCQOw2ChA3i6Zyg-u-FhIKkQ', '_blank')">اشترك في قناتي على يوتيوب - Subscribe to My YouTube Channel</button>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2023 Programming for Beginners. جميع الحقوق محفوظة - All Rights Reserved.</p>
+    <p>هذا الموقع تعليمي مجاني 100%. للإعلانات أو الشراكات، اتصل بنا: <a href="mailto:pwael8700@gmail.com" style="color: #fff; text-decoration: underline;">pwael8700@gmail.com</a></p>
+    <p>This site is 100% free educational content. For ads or partnerships, contact us.</p>
+</footer>
+
+<script>
+/* --- وظائف الواجهة --- */
+function toggleLanguage(lang) {
+    const arabic = document.querySelectorAll('.arabic');
+    const english = document.querySelectorAll('.english');
+    // أزرار اللغات
+    const arBtn = document.getElementById('langArBtn');
+    const enBtn = document.getElementById('langEnBtn');
+
+    if (lang === 'ar') {
+        arabic.forEach(el => el.style.display = 'block');
+        english.forEach(el => el.style.display = 'none');
+        arBtn.classList.add('active');
+        enBtn.classList.remove('active');
+    } else {
+        arabic.forEach(el => el.style.display = 'none');
+        english.forEach(el => el.style.display = 'block');
+        arBtn.classList.remove('active');
+        enBtn.classList.add('active');
+    }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    // تغيير لون أقسام الكورسات إن وُجدت
+    document.querySelectorAll('.courses-section').forEach(sec => sec.classList.toggle('dark'));
+}
+
+function copyCode(button) {
+    // العنصر التالي بعد الزر هو div.code-block
+    const codeElem = button.nextElementSibling;
+    if (!codeElem) return;
+    const code = codeElem.innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        const originalText = button.innerText;
+        button.innerText = (button.innerText.includes('نسخ') ? 'تم النسخ ✅' : 'Copied ✅');
+        setTimeout(() => { button.innerText = originalText; }, 1400);
+    }).catch(() => {
+        alert('فشل في النسخ - Copy failed');
+    });
+}
+
+function showMainContent(event) {
+    event.preventDefault();
+    // إظهار المحتوى الرئيسي وإخفاء الصفحات الثابتة
+    document.getElementById('main-sections').classList.remove('hidden');
+    document.querySelectorAll('.static-page').forEach(page => page.style.display = 'none');
+    const href = event.currentTarget.getAttribute('href');
+    if (href) {
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function showStaticPage(pageId) {
+    // إظهار صفحة ثابتة واحدة وإخفاء الباقي
+    document.querySelectorAll('.static-page').forEach(page => page.style.display = 'none');
+    const page = document.getElementById(pageId);
+    if (page) {
+        page.style.display = 'block';
+        document.getElementById('main-sections').classList.add('hidden');
+        // تمرير إلى أعلى الصفحة الافتراضي
+        page.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+/* تهيئة الصفحة عند التحميل */
+document.addEventListener('DOMContentLoaded', function() {
+    // إظهار المحتوى الرئيسي فقط، وإخفاء صفحات About/Contact/Privacy
+    document.getElementById('main-sections').classList.remove('hidden');
+    document.querySelectorAll('.static-page').forEach(page => page.style.display = 'none');
+
+    // تأكد إن اللغة العربية مرئية بشكل افتراضي
+    toggleLanguage('ar');
+});
+</script>
+
+</body>
+</html>
